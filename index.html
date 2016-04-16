@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input | Semantic UI</title>
+	<noscript>
+	  <div id="tanpa-js">
+	    <h2>PAM Butuh JavaScript</h2>
+	    <p>PAM tidak bisa tampil karena kamu menon-aktifkan javascript. <a href="http://www.enable-javascript.com/id/" target="_blank">Ikuti instruksinya disini untuk mengaktifkan javascript</a></p>
+	  </div>
+	</noscript>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+	<style type="text/css">
+		#map {height: 80%;}
+	  #tanpa-js {padding:25px; text-align:center}
+	  .masthead.segment.zoomed h1 {
+	    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0);
+	    color: rgba(255, 255, 255, 1);
+	  }
+	  .masthead.zoomed:after {
+	    opacity: 0;
+	  }
+	  .masthead.zoomed {
+	    background-color: #25282A;
+	  }
+
+	  .masthead {
+	    position: relative;
+	    overflow: hidden;
+	    text-align: center;
+	    padding: 0em;
+	    color: rgba(255, 255, 255, 0.9);
+	    margin-bottom: 0px;
+	    border-bottom: none;
+
+	    background-color: #000000;
+	    background-position: 50% 50%;
+	    -webkit-transform: translate3d(0, 0, 0);
+	    transform: translate3d(0, 0, 0);
+	  }
+	  .masthead:after {
+	    position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    z-index: -1;
+	    width: 100%;
+	    height: 100%;
+	    content: '';
+	    background-size: cover;
+
+	    opacity: 0.45;
+	  }
+	  .masthead.bg3:after {
+	    background-image: url("http://semantic-ui.com/images/backgrounds/3.jpg");
+	  }
+	  
+	  .masthead,
+	  .masthead:after {
+	    -ms-transition:
+	      background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+	      opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s
+	    ;
+	    -moz-transition:
+	      background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+	      opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s
+	    ;
+	    -webkit-transition:
+	      background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+	      opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s
+	    ;
+	    transition:
+	      background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+	      opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s
+	    ;
+	  }
+	  .masthead .container {
+	    height: 55vh;
+	    margin-left: auto !important;
+	    margin-right: auto !important;
+	    min-height: 600px;
+
+	    -webkit-box-align: center;
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-pack: center;
+	    -webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	    justify-content: center;
+	  }
+	  
+	  .masthead.segment .typed-cursor {
+	    position: relative;
+	    top: -0.05em;
+	    left: -0.25em;
+	    visibility: hidden;
+	    opacity: 1;
+	    -webkit-animation: blink 0.7s infinite;
+	    -moz-animation: blink 0.7s infinite;
+	    animation: blink 0.7s infinite;
+	    -webkit-transition: opacity 0.7s ease;
+	    -moz-transition: opacity 0.7s ease;
+	    transition: opacity 0.7s ease;
+	  }
+	  .masthead.segment .typed-cursor.stop {
+	    opacity: 0;
+	    -moz-animation-duration: 0s;
+	    -webkit-animation-duration: 0s;
+	    animation-duration: 0s;
+	  }
+	  @keyframes blink {
+	    0% { opacity:1; }
+	    50% { opacity:0; }
+	    100% { opacity:1; }
+	  }
+	  @-webkit-keyframes blink {
+	    0% { opacity:1; }
+	    50% { opacity:0; }
+	    100% { opacity:1; }
+	  }
+	  @-moz-keyframes blink {
+	    0% { opacity:1; }
+	    50% { opacity:0; }
+	    100% { opacity:1; }
+	  }
+
+	  .vertical.segment {
+	    box-shadow: none;
+	  }
+
+	  .masthead.segment h1 {
+	    font-size: 3em;
+	    color: rgba(255, 255, 255, 1);
+	    line-height: 1.2;
+	    margin: 0px 0px 0px;
+	    padding-bottom: 0px;
+	    -moz-perspective: 500px;
+	    -webkit-perspective: 500px;
+	    perspective: 500px;
+
+	    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+	    -moz-transform-style: preserve-3d;
+	    -webkit-transform-style: preserve-3d;
+	    transform-style: preserve-3d;
+	  }
+	  .masthead.segment h1 .tagline {
+	    font-size: 0.75em;
+	  }
+	  .masthead.segment h1 > .library {
+	    display: block;
+	    font-size: 1.75em;
+	    font-weight: bold;
+	  }
+	  .masthead.segment h1 b {
+	    display: inline-block;
+	    font-weight: 500;
+	  }
+	  .masthead.segment h1 .text {
+	    display: inline-block;
+	    font-weight: 300;
+	    margin-left: -0.4em;
+	  }
+	  .masthead h2 {
+	    font-weight: normal;
+	    margin: 0px 0 16px 0px;
+	    font-size: 1.75em;
+	    border-bottom: none;
+	    line-height: 1;
+	  }
+	  .masthead p {
+	    font-size: 1.5em;
+	    margin: 1em 0em 1.5em;
+	    padding: 0px;
+	  }
+	  .ui.header {
+	    font-weight: normal;
+	  }
+
+	  .introduction {
+	    position: relative;
+	    clear: both;
+	    display: block;
+	    text-align: center;
+	  }
+	  .introduction .buttons {
+	    margin-top: 3em;
+	  }
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#kategori .menu .item').tab({
+				context: '#kategori'
+		  });
+		});
+	</script>
+</head>
+<body>
+<div class="masthead segment bg3">
+  <div class="ui container">
+    <div class="introduction">
+      <div class="ui black version label">
+        Jasa Pengolahan Data
+      </div>
+      <h1 class="ui inverted header">
+        <span class="library">
+          Prima Adikara Mandiri (PAM)
+        </span>
+        <span class="tagline">
+          User Interface is the language of the web
+        </span>
+      </h1>
+      <div class="ui hidden divider"></div>
+      <a href="/introduction/getting-started.html" class="ui huge inverted download button">
+        Apa Yang Bisa Kami Bantu
+      </a>
+      <a href="/introduction/new.html" class="ui huge inverted basic button">Kelebihan</a>
+    </div>
+  </div>
+</div>
+<p></p>
+<div class="ui stackable three column grid">
+	<div class="column">
+		<h3 class="ui icon header">
+		  <i class="circular inverted teal dashboard icon"></i>
+		  <div class="content">
+		    Pengalaman
+		    <div class="sub header">Dipercaya lebih dari 8 tahun telah membantu ratusan pengolahan data dengan baik.</div>
+		  </div>
+		</h3>
+	</div>
+	<div class="column">
+		<h3 class="ui icon header">
+		  <i class="circular inverted teal record icon"></i>
+		  <div class="content">
+		    Video Step Pengolahan Data
+		    <div class="sub header">Kami merekam proses pengolahan data Anda di komputer kami. Sehingga jika Anda ingin mendapatkan hasil yang serupa, Anda cukup mengikuti video tersebut.</div>
+		  </div>
+		</h3>
+	</div>
+	<div class="column">
+		<h3 class="ui icon header">
+		  <i class="circular inverted teal book icon"></i>
+		  <div class="content">
+		    Modul Pengolahan Data
+		    <div class="sub header">Kami berikan secara gratis modul pengolahan data terkait dengan metodologi penelitian yang Anda ambil.</div>
+		  </div>
+		</h3>
+	</div>
+	<div class="column">
+		<h3 class="ui icon header">
+		  <i class="circular inverted teal money icon"></i>
+		  <div class="content">
+		    Biaya Mahasiswa
+		    <div class="sub header">95% pengguna PAM adalah mahasiswa. Biaya pengolahan data adalah biaya mahasiswa, kecuali jika Anda berasal dari korporasi/pemerintahan maka biaya disesuaikan.</div>
+		  </div>
+		</h3>
+	</div>
+	<div class="column">
+		<h3 class="ui icon header">
+		  <i class="circular inverted teal building icon"></i>
+		  <div class="content">
+		    Kantor Jakarta
+		    <div class="sub header">PAM memiliki kantor di Jakarta yang bisa Anda datangi untuk sekedar konsultasi atau mengambil hasil dan penjelasan hasil. Kantor tutup pada Sabtu dan Minggu, komunikasi bisa dilakukan melalui telepon, sms, whatsapp, email.</div>
+		  </div>
+		</h3>
+	</div>
+	<div class="column">
+		<h3 class="ui icon header">
+		  <i class="circular inverted teal retweet icon"></i>
+		  <div class="content">
+		    Termasuk Revisi
+		    <div class="sub header">Ada kesalahan pada pengolahan data? Kami akan revisi tanpa tambahan biaya.</div>
+		  </div>
+		</h3>
+	</div>
+</div>
+
+
+<div id="kategori">
+	<div class="ui six item inverted menu">
+		<a class="item teal active" data-tab="stata">Stata</a>
+	  <a class="item red" data-tab="spss">SPSS</a>
+	  <a class="item yellow" data-tab="eviews">EViews</a>
+	  <a class="item orange" data-tab="dea">DEA</a>
+	  <a class="item olive" data-tab="input">Input Output</a>
+	  <a class="item purple" data-tab="snse">SNSE</a>
+	</div>
+
+	<!-- First -->
+	<div class="ui tab active" data-tab="stata">
+		<div class="ui stackable two column grid">
+			
+			<div class="column">
+			  <div class="ui header">Manajemen Data Stata Dasar</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="stata/a">Memasukan Data ke Stata</a>
+			        <a class="item" data-tab="stata/b">Dasar Statistik Deskriptif di Stata</a>
+			        <a class="item" data-tab="stata/c">Do-file Stata</a>
+			        <a class="item" data-tab="stata/d">Grafik Dasar di Stata</a>
+			        <a class="item" data-tab="stata/e">Word dan Excel</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="stata/a">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Input data ASCII seperti spreadsheet</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Input data ASCII Unformatted seperti text file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuka data file Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Input data menggunakan menu Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Save data yang telah diinput</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Lihat data yang telah diinput</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Edit data yang telah diinput</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/b">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menampilkan statistik deskriptif dasar di Output Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menampilkan statistik deskriptif yang spesifik di Output Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menampilkan tabel di Output Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menampilkan tabulasi data dan cross tabulasi data secara one-way atau two-way di Output Stata</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/c">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Apa itu do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengapa dan kapan harus menggunakan do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuat do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Me-running do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Tips do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuat note pada do-file</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat grafik scatter plot</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat grafik Histogram</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat grafik Box plot</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menampilkan judul, label, caption, dan legend pada grafik</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menyimpan grafik</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/e">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Menampilkan output stata di microsoft word</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menampilkan output stata di microsoft excel</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<div class="ui header">Pengujian Estimasi Model Panel Data</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="stata/b">Pengujian Model Panel Data</a>
+			        <a class="item" data-tab="stata/c">Pemilihan Model Panel Data</a>
+			        <a class="item" data-tab="stata/d">Uji Kelayakan Hasil Estimasi Model</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="stata/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Estimasi atau pengujian model Common Effect / Pooled Least Square</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Estimasi atau pengujian model Fixed Effect</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Estimasi atau pengujian model Random Effect</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menampilkan tabel hasil regresi menurut standar jurnal internasional di microsoft word menggunakan stata</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/c">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Pemilihan model: Common Effect vs Fixed Effect</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pemilihan model: Random Effect vs Fixed Effect</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pemilihan model: Common Effect vs Random Effect</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">F-Test, Chow Test, Hausman Test, Lagrange Multipliers (LM) Test</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Mengapa melakukan uji kelayakan hasil estimasi model atau uji asumsi klasik</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji kelayakan model Common Effect / Pooled Least Square</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji kelayakan model Fixed Effect</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji kelayakan model Random Effect</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<div class="ui header">Treatment atau Remedial Model Jika Gagal Lolos Uji Kelayakan Model</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="stata/bd">Apa yang salah</a>
+			        <a class="item" data-tab="stata/cd">Treatment Model Fixed Effect</a>
+			        <a class="item" data-tab="stata/dd">Treatment Model Random Effect</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="stata/bd">
+			        <div class="ui list">
+			        	Umumnya treatment yang dilakukan adalah dengan mengubah data dan variabel. Dalam kursus ini, kami akan menjelaskan bagaimana treatment yang seharusnya dilakukan <span style="color: #ff0000;"><strong>tanpa</strong> </span>mengubah data dan variabel<span style="color: #ff6600;"><strong>Treatment Model Fixed Effect</strong></span>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/cd">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Fixed Effect jika gagal uji autokorelasi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Fixed Effect jika gagal uji heteroskedastisitas</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Fixed Effect jika gagal uji cross sectional dependence</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Fixed Effect jika gagal uji autokorelasi dan heteroskedastisitas</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Fixed Effect jika gagal uji autokorelasi dan cross sectional dependence</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Fixed Effect jika gagal uji heteroskedastisitas dan cross sectional dependence</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Fixed Effect jika gagal uji autokorelasi, cross sectional dependence dan heteroskedastisitas</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/dd">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Random Effect jika gagal uji autokorelasi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Random Effect jika gagal uji heteroskedastisitas</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Random Effect jika gagal uji cross sectional dependence</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Random Effect jika gagal uji autokorelasi dan heteroskedastisitas</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Random Effect jika gagal uji autokorelasi dan cross sectional dependence</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Random Effect jika gagal uji heteroskedastisitas dan cross sectional dependence</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Treatment Model Random Effect jika gagal uji autokorelasi, cross sectional dependence dan heteroskedastisitas</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Second -->
+			<div class="column">
+			  <div class="ui header">Manajemen Data Stata Menegah</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="stata/f">Manajemen Variabel Stata</a>
+			        <a class="item" data-tab="stata/22">Manajemen Variabel Stata 2</a>
+			        <a class="item" data-tab="stata/23">Fungsi Matematika dan Logika dalam Stata</a>
+			        <a class="item" data-tab="stata/g">Analisa Survival Menggunakan Stata</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="stata/f">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Menggabungkan 2 variabel atau lebih</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel kategorikal baru dari variabel kategorikal yang ada melalui value, group atau cutpoint tertentu</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat group value dan tag value berdasarkan value tertentu</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas value minimal dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas value maksimal dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas rata-rata dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas median dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas fungsi value tertentu dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas jumlah observasi non-missing dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas fungsi difference dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas fungsi interquartile range dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas fungsi kurtosis dan skewness dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas fungsi modus dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas fungsi percentile dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas baris dan kolom dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas fungsi standar deviasi dari variabel tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat variabel baru dari variabel yang sudah ada didasarkan atas fungsi jumlah dari variabel tersebut</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/22">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Membuat variabel</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuat variabel menggunakan fungsi matematika dan logika</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Menemukan observasi maksimum dan minimum dalam berbagai variabel</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Memberikan label dan value pada setiap variabel</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengganti value pada variabel numeric</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Me-recode value pada variabel numeric</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengganti value pada variabel kategorikal</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Me-encode dan decode value pada variabel kategorikal</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengganti value dari string menjadi numeric</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengganti value dari numeric menjadi string</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">tostring dan destring</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Memverfikasi dan mengganti missing observation yang sering memiliki value yang tidak tepat</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengubah continuous variable menjadi categorical variable</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuat variabel indikator dari variabel kategorikal</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Menyusun berbagai variabel dalam dataset sesuai dengan kebutuhan</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">order, move and placevar</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/23">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Fungsi matematika dalam stata</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Fungsi density dan probability distribution</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Fungsi string</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Memodifikasi dan memanipulasi variabel string</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/g">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Melakukan analisa survival dari risiko suatu event</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Menggunakan situasi kompleks seperti stset, timevar, failvar, people entering/exiting study, time dependent covariates, left censoring, dll</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Memahami berbagai fungsi survival dalam stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Estimasi Kaplan-Meier</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Fungsi persentile Kaplan-Meier</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengestimasi dan mengkomparasi fungsi survival dari subset data</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuat grafik Kaplan-Meier</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Pengujian statistik inferensi dari analisa survival</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+			  <div class="ui header">Manajemen Data Stata Lanjutan</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="stata/h">Reshaping Datasets</a>
+			        <a class="item" data-tab="stata/i">Menggabungkan File atau Dataset</a>
+			        <a class="item" data-tab="stata/j">Stratified and Adjusted Analysis</a>
+			        <a class="item" data-tab="stata/k">Stata Programming</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="stata/h">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Teknik yang harus dilakukan jika ada banyak observasi dalam 1 individu</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menggunakan wide format</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menggunakan long format</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Tips melakukan Reshaping Datasets</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/i">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Cara menggabungkan berbagai variabel di dataset yang berbeda</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Tips menggabungkan berbagai variabel di dataset yang berbeda</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Cara menggabungkan observasi dari berbagai variabel di dataset yang berbeda</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Tips menggabungkan observasi dari berbagai variabel di dataset yang berbeda</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/j">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Manajemen data epidemologi (epitab)</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Menghitung sample size dan power calculations untuk biostats</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuat analisa stratifikasi</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Command tabodds, mhodds, cc, cs</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/k">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Melakukan looping dari berbagai list variabel</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Melakukan pengulangan dari berbagai list variabel</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Programming "if" dengan "inlist" dan "inrange"</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Foreach command</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">While command</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+			  <div class="ui header">Studi Kasus 1: Bagaimana Manajemen Modal Kerja Mempengaruhi Profitabilitas UKM Indonesia Menggunakan Dynamic Panel Data</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="stata/ha">Tujuan Penelitian</a>
+			        <a class="item" data-tab="stata/ia">Data Penelitian</a>
+			        <a class="item" data-tab="stata/ja">Metode Penelitian</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="stata/ha">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Bagaimana Manajemen Modal Kerja Mempengaruhi Profitabilitas UKM Indonesia.</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Berapa level optimal modal kerja yang memaksimalkan profitabilitas UKM Indonesia</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/ia">
+			        <div class="ui list">
+			        	Data Cash Conversion Cycle, Leverage, Size, Growth UKM Indonesia.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/ja">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Dynamic panel-data estimation, two-step system Generalized Method of Moments (GMM) Arrelano Bond, Instruments for first differences equation, Instruments for levels equation</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Robust Test: Arellano-Bond test for autocorrelation, Uji Sargan, Uji Hansen, Difference-in-Hansen tests</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+			  <div class="ui header">Studi Kasus 4: Apakah terdapat abnormal return signifikan atas perubahan opini audit</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="stata/hb">Tujuan Penelitian</a>
+			        <a class="item" data-tab="stata/ib">Data Penelitian</a>
+			        <a class="item" data-tab="stata/jb">Metode Penelitian</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="stata/hb">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Apakah terdapat abnormal return positif signifikan atas perubahan opini audit wajar dengan pengecualian (WDP) menjadi wajar tanpa pengecualian dengan paragraf penjelas (WTP-PP)</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Apakah terdapat abnormal return negatif signifikan atas perubahan opini audit wajar tanpa pengecualian dengan paragraf penjelas (WTP-PP) menjadi wajar dengan pengecualian (WDP)</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/ib">
+			        <div class="ui list">
+			        	Data Harga saham, harga saham pasar, opini auditor.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/jb">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Return saham, return saham pasar, Expected return teknik regresi OLS (Ordinary Least Square)</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">abnormal return saham</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">average abnormal return (AAR)</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cumulative Average Abnormal Return (CAAR)</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Uji beda paired sample test</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+			  <div class="ui header">Studi Kasus 1: Mengetahui volatilitas spot komoditas sebelum dan sesudah adanya kontrak berjangka di BBJ Menggunakan Stata</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="stata/hc">Tujuan Penelitian</a>
+			        <a class="item" data-tab="stata/ic">Data Penelitian</a>
+			        <a class="item" data-tab="stata/jc">Metode Penelitian</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="stata/hc">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Mengetahui volatilitas spot komoditas kakao sebelum dan sesudah adanya kontrak berjangka kakao di BBJ</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengetahui volatilitas spot komoditas kakao sebelum adanya kontrak berjangka kakao di BBJ</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengetahui volatilitas spot komoditas kakao sesudah adanya kontrak berjangka kakao di BBJ</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengetahui pengaruh volume dan open interest perdagangan berjangka komoditas kakao terhadap conditional volatility spot</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengetahui hubungan yang terjadi antara aktivitas perdagangan berjangka yang diwakili oleh volume dan open interest dengan volatilitas harga spot</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/ic">
+			        <div class="ui list">
+			        	Data harga spot harian, volume dan open interest perdagangan kontrak berjangka komoditas BBJ.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="stata/jc">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">statistik deskriptif</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Uji Unit Root</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Penentuan Ordo Model ACF dan PACF</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Model GARCH Terbaik</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Box-Pierce (Q-statistic)</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Pengujian ARCH dan GARCH Test</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Penentuan Lag Optimal VAR</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Granger Causality Test</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Vector Auto Regressive (VAR)</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">50-day backward moving average</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Smooth and forecast univariate time-series data</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<div class="ui header">Studi Kasus 1: Perbandingan ketahanan perusahaan group, non-group, dan BUMN pada saat krisis menggunakan Stata</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="snse/b"></a>
+			        <a class="item" data-tab="snse/c"></a>
+			        <a class="item" data-tab="snse/d"></a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah perusahaan group cenderung menghadapi kendala keuangan daripada yang perusahaan non-group dan BUMN</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah perusahaan group memiliki stock return yang lebih tinggi atau lebih lebih rendah dibandingkan dengan perusahaan independen dan BUMN pada waktu pada saat krisis keuangan global terjadi</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	Data Investasi, Perusahaan group dan non-grop; Tobin''s Q; cash flow pada periode t dan cash flow pada periode lag 1; Cash; Sales; Leverage.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Regresi data panel dapat dilakukan melalui tiga model estimasi, yaitu common effects, fixed effects, dan random effects</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pemilihan model melalui pengujian Langrange Multiplier, F test, dan hausman</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa kelayakan model melalui analisa heteroskedastisitas, multikolinieritas, dan autokorelasi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji beda Kruskal-Wallis Test</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<div class="ui header">Studi Kasus 2: Pengaruh Kesehatan Bank dan Keadaan Makroekonomi terhadap Profitabilitas Bank Domestik, Bank Asing, dan Bank Campuran Menggunakan Regresi Panel Data Variabel Dummy dan Variabel Interaksi</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="snse/b"></a>
+			        <a class="item" data-tab="snse/c"></a>
+			        <a class="item" data-tab="snse/d"></a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah kesehatan bank berpengaruh terhadap profitabilitas bank domestic, bank asing dan bank campuran di Indonesia</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah keadaan makroekonomi berpengaruh terhadap profitabilitas bank domestic, bank asing dan bank campuran di Indonesia</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah terdapat perbedaan yang signifikan antara profitabilitas bank domestic, bank asing dan bank campuran di Indonesia</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah masuknya bank asing ke dalam bank swasta berpengaruh signifikan terhadap profitabilitas bank campuran</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	Data Direktori Perbankan Indonesia (DPI) dan LPPI. Data DPI juga digunakan untuk membedakan bank swasta dengan pemegang saham pengendali (PSP) asing dan domestik. Untuk data makroekonomi, yaitu GDP growth dan inflasi, data ini diperoleh dari Badan Pusat Statistik (BPS).
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Descriptive Statistics</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa Regresi Panel Data Pooled Least Square dengan variabel dummy dan variabel interaksi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Beda Profitabilitas Antara Bank Domestik, Bank Campuran dan Bank Asing di Indonesia</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<div class="ui header">Studi Kasus 1: Spillover Effect antara Small Cap dan Large Cap Menggunakan Dynamic Conditional Correlation GARCH BEKK</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="snse/b"></a>
+			        <a class="item" data-tab="snse/c"></a>
+			        <a class="item" data-tab="snse/d"></a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/b">
+			        <div class="ui list">
+			        	Mengidentifikasi keberadaan Spillover Effect antara saham Small Cap dan saham Large Cap.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	Annual report, bloomberg, thomson reuters econit.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Annualized Return dan Annualized Volatility</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Estimasi GARCH BEKK (Engle and Kroner, 1995)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Conditional covariance identifikasi spillover effect</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Conditional correlation identifikasi spillover effect</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<div class="ui header">Studi Kasus 1: Kausalitas Besaran Moneter dan Suku Bunga terhadap Fluktuasi Harga di Indonesia</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="snse/b"></a>
+			        <a class="item" data-tab="snse/c"></a>
+			        <a class="item" data-tab="snse/d"></a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/b">
+			        <div class="ui list">
+			        	Menganalisis kausalitas besaran moneter dan suku bunga terhadap fluktuasi harga di Indonesia.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	Data series bulanan. Data bulanan digunakan dikarenakan informasi dan penghitungan indek harga (INF) yang diterbitkan Badan Pusat Statistik tersedia secara bulanan. Begitu pula dengan data besaran moneter moneter dan suku bunga yang diterbitkan Bank Indonesia dapat tersedia secara bulanan. Dengan demikian, data series secara bulanan menjadi tidak menjadi masalah.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Stasioner Data</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Kausalitas antar variabel: Pendekatan Granger untuk kausalitas</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Penentuan Jumlah Lag</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji kontribusi variabel (Variance Decomposition)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji respon variabel (Impulse Response Functions)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Estimasi VAR (Vector Auto Regression)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Stabilitas VAR (Vector Auto Regression)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Estimasi VECM (Vector Error Correction Mechanism)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Kointergrasi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Estimasi Structural VAR (SVAR)</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- SPSS -->
+	<div class="ui tab" data-tab="spss">
+		<div class="ui stackable two column grid">
+			<div class="column">
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="spss/a">Manajemen Data Dalam SPSS</a>
+			        <a class="item" data-tab="spss/b">Statistik Deskriptif Dalam SPSS</a>
+			        <a class="item" data-tab="spss/c">Analisis Korelasi Bivariat Dalam SPSS</a>
+			        <a class="item" data-tab="spss/d">Analisis Regresi Dalam SPSS</a>
+			        <a class="item" data-tab="spss/e">Uji Perbandingan Rata-Rata Dalam SPSS</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="spss/a">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Membuat File Data Baru</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mendefinisikan Variabel</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Menyimpan data</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">menghapus data</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">mengkopi data</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">menyisipkan data</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Transpose Data,</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Sort Cases,</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Split File,</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Select Case</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">dan lain-lain</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="spss/b">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Metode Statistika</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Skala Pengukuran</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Skala Nominal</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Skala Ordinal</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Skala Interval</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Skala Rasio</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Fungsi Frekuensi dalam SPSS</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Charts</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Statistik Deskriptif</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cross Tabulasi</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Uji Normalitas, grafik normalitas, dan histogram</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="spss/c">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Pengertian dan konsep Analisis Korelasi Bivariat</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Coefficient Contingency: Konsep, teori, dan aplikasi di SPSS</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">uji Pearson Chi-Square: Konsep, teori, dan aplikasi di SPSS</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Langkah – langkah perhitungan uji Pearson Chi-Square: Konsep, teori, dan aplikasi di SPSS</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Analisis korelasional bivariat menggunakan metode Rank Spearman: Konsep, teori, dan aplikasi di SPSS</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Uji Signifikansi Nilai Korelasi: Konsep, teori, dan aplikasi di SPSS</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Kriteria Penentuan Keputusan: Konsep, teori, dan aplikasi di SPSS</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="spss/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengertian dan konsep Analisis Regresi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menaksir parameter: Konsep, teori, dan aplikasi di SPSS</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menguji hipotesis: Konsep, teori, dan aplikasi di SPSS</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisis varian untuk pengujian regresi: Konsep, teori, dan aplikasi di SPSS</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Validitas</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Reliabilitas</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">uji linieritas, bias kuesioner</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Multikolinearitas: Collinearity Diagnostic with Tolerance &amp; VIF</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Heterokedastisitas: Scatter Plot, SRESID &amp; ZPRED</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Autokorelasi: Durbin Watson.</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Normalitas: One Sample Kolmogorov-Smirnov, P-Plots</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Homogenitas: One Way Anova, Test of Homogenity Variance</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Linieritas: Anova Table Linearity</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">dan lain-lain</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="spss/e">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengertian dan konsep Uji Perbandingan Rata-Rata Dalam SPSS</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">One Sample T Test: Konsep, teori, dan aplikasi di SPSS</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Independent Sample T Test: Konsep, teori, dan aplikasi di SPSS</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Paired Sample T Test: Konsep, teori, dan aplikasi di SPSS</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Second -->
+			<div class="column">
+				<div class="ui header">Studi Kasus 1: Anaisis kualitas pengungkapan informasi Management Discussion and Analysis Saat Perusahaan Mengalami Kesulitan Keuangan Menggunakan Regresi Logit</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="snse/b"></a>
+			        <a class="item" data-tab="snse/c"></a>
+			        <a class="item" data-tab="snse/d"></a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Untuk menganalisis kualitas pengungkapan (final disclosure score) MD&amp;A yang digunakan untuk melihat kualitas pengungkapan manajemen jika perusahaan mengalami kondisi financial distress</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">2 menganalisis apakah hasil perubahaan kondisi perusahaan (OUTCOME), perubahaan Z-Score, kepemilikan publik, pergantian CEO, leverage dan ukuran perusahaan, berpengaruh terdapat perubahaan kualitas pengungkapan informasi M&amp;A dalam laporan tahunan perusahaan yang mengalami financial distress dan melakukan recovery</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	Data laporan keuangan perusahaan yang telah diaudit oleh auditor independen.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">uji univariate dengan membandingkan uji beda dari median</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa multivariate dengan menggunakan Analisis Regresi Logit</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<div class="ui header">Studi Kasus 2: Analisis Tindakan Pajak Agresif Sebelum dan Sesudah Reformasi Pajak, dan Pengaruh Karakteristik Corporate Governace Terhadap Tindakan Pajak Agresif Menggunakan Panel Logit</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="snse/b"></a>
+			        <a class="item" data-tab="snse/c"></a>
+			        <a class="item" data-tab="snse/d"></a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah terdapat perbedaan agresifitas pajak sebelum dan sesudah reformasi perpajakan</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah karakteristik corporate governance yaitu komisaris independen, kepemilikan institusional, komite audit, dan kualitas audit berpengaruh terhadap tindakan pajak agresif</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	Data laporan keuangan perusahaan yang telah diaudit oleh auditor independen.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa univariate dengan menggunakan uji t test</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa multivariate dengan menggunakan Analisis Panel Logit</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<div class="ui header">Studi Kasus 3: Pengaruh Pengungkapan Etika Sukarela terhadap Kemungkinan Kecurangan Laporan Keuangan Menggunakan Regresi Panel Logit</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="snse/b"></a>
+			        <a class="item" data-tab="snse/c"></a>
+			        <a class="item" data-tab="snse/d"></a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah komite audit independen, komisaris independen, kepemilikan manajerial, EPS dan reputasi KAP memiliki pengaruh terhadap kemungkinan kecurangan laporan keuangan perusahaan</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Apakah investor dapat menggunakan informasi berupa pengungkapan etika sukarela untuk membantu mengindikasi adanya kecurangan laporan keuangan pada perusahaan</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Bagaimana luas informasi pengungkapan etika sukarela oleh perusahaan</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	Data laporan keuangan perusahaan yang telah diaudit oleh auditor independen.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa univariate dengan membandingkan uji beda dari rata-rata dengan menggunakan uji t test dan uji wilcoxon</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa multivariate dilakukan dengan cara melakukan regresi logistik</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Hosmer and Lemeshow Goodness of Fit dan Overall Model Fit</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<div class="ui header">Studi Kasus 4: Dampak Risk Based Capital, Loss Ratio, Firm Characteristic, dan Management Characteristic terhadap Profitabilitas perusahaan asuransi menggunakan Analisa Panel Data</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="snse/b"></a>
+			        <a class="item" data-tab="snse/c"></a>
+			        <a class="item" data-tab="snse/d"></a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/b">
+			        <div class="ui list">
+			        	Apakah Risk Based Capital, Loss Ratio, Firm Characteristic, dan Management Characteristic mempengaruhi Profitabilitas (ROA dan ROE) perusahaan asuransi
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	Data Annual report perusahaan asuransi Indonesia
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisis Deskriptif</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Multikolinearitas Regresi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Heteroskedastisitas Regresi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Uji Autokorelasi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa Regresi Panel Data: Uji T, Uji F, Koefisien Determinasi</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- DEA -->
+	<div class="ui tab" data-tab="dea">
+		<div class="ui stackable two column grid">
+			<div class="column">
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="dea/a">Apa itu DEA (Data Envelopment Analysis)</a>
+			        <a class="item" data-tab="dea/b">Konsep Efisiensi</a>
+			        <a class="item" data-tab="dea/c">Jenis Efisiensi</a>
+			        <a class="item" data-tab="dea/d">Penjelasan dan Komparasi Berbagai Metode Pengukuran Efisiensi: Parametric</a>
+			        <a class="item" data-tab="dea/e">Penjelasan dan Komparasi Berbagai Metode Pengukuran Efisiensi: Non-Parametric</a>
+			        <a class="item" data-tab="dea/f">Metode Pengukuran</a>
+			        <a class="item" data-tab="dea/fa">Pengukuran Efisiensi Bank</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="dea/a">
+			        <strong><em>Data Envelopment Analysis (DEA)</em></strong><em>Data Envelopment Analysis (DEA) </em>adalah sebuah teknik pemrograman matematis yang digunakan untuk mengevaluasi efisiensi relatif dari sebuah kumpulan unit‐unit pembuat keputusan (decision making unit/DMUs) dalam mengelola <em>sumber daya (input) </em>dengan jenis yang sama sehingga menjadi <em>hasil (output)</em> dengan jenis yang sama pula, dimana hubungan bentuk fungsi dari input ke output tidak diketahui. Istilah DMU dalam metode DEA ini dapat bermacam‐macam unit, seperti bank, rumah sakit, retail store, dan apa saja yang memiliki kesamaan karakteristik operasional<strong>Pendekatan Produksi</strong> Pendekatan produksi melihat institusi finansial sebagai produser dari akun deposit (deposit account) dan kredit pinjaman; mendifinisikan output sebagai jumlah dari akun-akun tersebut atau dari transaksi-transaksi yang terkait. Produk dan layanan seperti pinjaman dan deposito adalah variabel output dalam pendekatan ini. Sumber daya yang digunakan seperti biaya tenaga kerja, modal dan usaha adalah variabel inputnya. Pendekatan ini digunakan untuk mengukur efisiensi operasional dan mengasumsikan bahwa output diperoleh dari permintaan pelanggan<strong>Pendekatan Intermediasi</strong>Pendekatan intermediasi memandang sebuah institusi finansial sebagai intermediator, yang berfungsi untuk mengumpulkan dana dalam bentuk deposito dan sumber dana lainnya kemudian menyalurkannya sebagai pinjaman maupun aset lainnya guna memperoleh pendapatan. Total deposit yang dapat dipinjam oleh masyarakat dan berbagai total biaya yang dikeluarkan dalam melakukan proses intermediasi diasumsikan sebagai input pada model ini. Sedangkan cara dimana sejumlah dana dapat dipinjamkan kepada masyarakat dianggap sebagi output model ini, termasuk di dalamnya beban tenaga kerja dan beban administrasi.<strong>Pendekatan Aset</strong>Pendekatan aset melihat fungsi primer sebuah institusi keuangan sebagai pencipta pembiayaan. Pada bank, pendekatan aset mengukur kemampuan perbankan dalam menanamkan atau mengelola dana dalam bentuk pembiayaan dan aktiva lancar yang dimiliki sebagai <em>output</em>. Sedangkan <em>input</em> diukur dari total aset yang dimiliki bank.
+			      </div>
+			      <div class="ui tab" data-tab="dea/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Penjelasan mengenai konsep Teori Konsumen</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Penjelasan mengenai konsep Teori Produsen</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Production Frontiers and Technical Efficiency</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Produktifitas, Technical efficiency dan Skala Ekonomis</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">productivity change dan technical change</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Input Oriented dan Allocative Efficiency</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Output Oriented dan Allocative Efficiency</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/c">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Detail penjelasan mengenai Technical efficiency</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Detail penjelasan mengenai Allocative efficiency</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">hubungan antara Technical efficiency, Allocative efficiency, dan Overall Efficiency</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Technical efficiency, Pure Technical Efficiency, dan Scale Efficiency</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Least-squares (LS)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Thick Frontier Approach (TFA)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Distribution Free Approach (DFA)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Stochastic Frontiers Approach (SFA)</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/e">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Total Factor Productivity (TFP) index</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Free Disposal Hull</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Data Envelopment Analysis (DEA)</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/f">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">TC: Technical Change</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">TEf: Technical Efficiency</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">SEc: Scale Economies</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">SEf: Scale Efficiency</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">AEf: Allocative Efficiency</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">CEf: Congestion Efficiency</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">TFPch: Total Factor Productivity Change (panel data)</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/fa">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Pendekatan Produksi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Pendekatan Intermediasi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Pendekatan Lainnya</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Input dan Output masing-masing pendekatan</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<h3><span style="color: #008000;">Studi Kasus 1: Tingkat Efisiensi Kinerja Bank Umum dengan Data Panel</span></h3>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="dea/g">Data Penelitian</a>
+			        <a class="item" data-tab="dea/h">Metode Penelitian</a>
+			        <a class="item" data-tab="dea/i">Tujuan Penelitian</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="dea/g">
+			        <div class="ui list">
+			        	Mengukur tingkat efisiensi Kinerja Bank Umum yang listing di BEI dengan metode pengukuran Data Envelopment Analysis
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/h">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Bank-bank umum konvensional yang terdaftar pada Bursa Efek Indonesia.</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menggunakan data panel (bank sebagai individu; tahun sebagai periode). Studi kasus yang baik jika Anda ingin menghitung DEA dengan data berupa data panel.</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/i">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Data Envelopment Analysis</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">DEA Data Panel CRS/VRS Malmquist TFP Input Oriented/Output Oriented</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menggunakan berbagai pendekatan seperti Pendekatan Intermediasi, Pendekatan Produksi, dll</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengukuran efisiensi seperti: Technically Efficiency, Relative Efficiency, Super Efficiency, Total Factor Productifity, dll</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menggunakan Return to Scale: Constant Returns to Scale (CRS) dan Variable Returns to Scale (VRS) dengan peningkatan efisiensi (Increasing Return to Scale) atau penurunan efisiensi (Decreasing Return to Scale)</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<h3><span style="color: #008000;">Studi Kasus 2: Analisis Tingkat Efisiensi Bank Umum Syariah di Indonesia Dengan Metode Data Envelopment Analysis</span></h3>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="dea/j">Data Penelitian</a>
+			        <a class="item" data-tab="dea/k">Metode Penelitian</a>
+			        <a class="item" data-tab="dea/l">Tujuan Penelitian</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="dea/j">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Mengukur tingkat efisiensi Bank Umum Syariah di Indonesia dengan metode Data Envelopment Analysis jika dilihat dengan pendekatan intermediasi.</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Mengukur tingkat efisiensi Bank Umum Syariah di Indonesia dengan metode Data Envelopment Analysis jika dilihat dengan pendekatan produksi.</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Mengukur tingkat efisiensi Bank Umum Syariah di Indonesia dengan metode Data Envelopment Analysis jika dilihat dengan pendekatan aset.</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/k">
+			        <div class="ui list">
+			        	Bank-bank syariah yang terdaftar pada Bursa Efek Indonesia.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/l">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Data Envelopment Analysis</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menggunakan berbagai pendekatan seperti Pendekatan Intermediasi, Pendekatan Produksi, Pendekatan Aset</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengukuran efisiensi seperti: Technically Efficiency, Scale Efficiency untuk berbagai basis waktu</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menggunakan Return to Scale: Constant Returns to Scale (CRS) dan Variable Returns to Scale (VRS) dengan peningkatan efisiensi (Increasing Return to Scale) atau penurunan efisiensi (Decreasing Return to Scale)</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="column">
+				<h3><span style="color: #008000;">Studi Kasus 3: Faktor-Faktor yang Mempengaruhi Efisiensi Bank di Indonesia</span></h3>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="dea/m">Data Penelitian</a>
+			        <a class="item" data-tab="dea/n">Metode Penelitian</a>
+			        <a class="item" data-tab="dea/o">Tujuan Penelitian</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="dea/m">
+			        <div class="ui list">
+			        	Mengidentifikasi Faktor-Faktor yang Mempengaruhi Efisiensi Bank di Indonesia
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/n">
+			        <div class="ui list">
+			        	Direktori Perbankan Indonesia publikasi Bank Indonesia.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="dea/o">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Data Enevelopment Analysis untuk menghitung efisiensi bank-bank di Indonesia</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menggunakan berbagai pendekatan seperti Pendekatan Intermediasi, Pendekatan Produksi, Pendekatan Aset</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengukuran efisiensi seperti: Technically Efficiency, Scale Efficiency untuk berbagai basis waktu</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Menggunakan Return to Scale: Constant Returns to Scale (CRS) dan Variable Returns to Scale (VRS) dengan peningkatan efisiensi (Increasing Return to Scale) atau penurunan efisiensi (Decreasing Return to Scale)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Regresi panel tobit untuk melihat faktor apa saja yang mempengaruhi efisiensi bank-bank di Indonesia</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- INPUT OUTPUT -->
+	<div class="ui tab" data-tab="input">
+		<div class="ui stackable two column grid">
+			<div class="column">
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="input/a">Updating Input Output</a>
+			        <a class="item" data-tab="input/b">Agregasi Tabel Input Output</a>
+			        <a class="item" data-tab="input/c">Pengolahan data Analisa Input Output dan Inter Regional Input Output (IRIO)</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="input/a">
+			        Mengupdate tabel IO yang tersedia menjadi tabel IO tahun yang diinginkan
+			      </div>
+			      <div class="ui tab" data-tab="input/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Agregasi Tabel Input Output dari banyak sektor atau banyak regional ke sedikit sektor atau sedikit regional</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Agregasi Tabel Input Output dari sedikit sektor atau sedikit regional ke banyak sektor atau banyak regional</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="input/c">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Output Multiplier</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Input Multiplier</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Income Multiplier</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Employment Multiplier</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Ghoshian Inverse</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa Dampak</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Final Demand Scenarios</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Key Sectors Analysis</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Forward &amp; Backward Linkage</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Leontief Inverse</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa Multiplier Product Matrix (MPM)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Output Decomposition</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Extracting Method</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa Pull and Push Analysis</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Field of Influence</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Inter Regional Input Output (IRIO)</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Second -->
+			<div class="column">
+				<h3><span style="color: #008000;">Studi Kasus 1: Peran Industri Gula Jawa Timur terhadap Perekonomian Jawa Timur Menggunakan Analisa Input Output</span></h3>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="input/f">Tujuan Penelitian</a>
+			        <a class="item" data-tab="input/g">Data Penelitian</a>
+			        <a class="item" data-tab="input/h">Metode Penelitian</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="input/f">
+			        <div class="ui list">
+			          Bagaimana Peran Industri Gula Jawa Timur terhadap Perekonomian Jawa Timur Menggunakan Analisa Input Output
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="input/g">
+			        <div class="ui list">
+			          Tabel Input Output provinsi Jawa Timur.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="input/h">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Updating input output Jawa Timur dari tahun 2010 menjadi tahun 2012</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Agregasi spasial sektoral dari 110 sektor menjadi 66 sektor</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Employment multiplier, analisa dampak output, Income Multiplier, Input Multiplier, Key Sectors Analysis Forward and Backward Linkage, </div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Leontief Inverse, Output Multiplier</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Tiga -->
+			<div class="column">
+				<h3><span style="color: #008000;">Studi Kasus 2: Peranan Agroindustri Terhadap Pertumbuhan Wilayah, Penyerapan Tenaga Kerja dan Peningkatan Pendapatan Masyarakat Kota Bogor Menggunakan Analisa Input Output</span></h3>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="input/i">Tujuan Penelitian</a>
+			        <a class="item" data-tab="input/j">Data Penelitian</a>
+			        <a class="item" data-tab="input/k">Metode Penelitian</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="input/i">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Menganalisis peranan sektor agroindustri di Kota Bogor terhadap perekonomian daerah dalam pembentukan struktur permintaan dan penawaran, investasi, nilai tambah dan output sektoral.</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Menganalisis tingkat keterkaitan ke belakang dan ke depan (backward and forward linkage) sektor agroindustri dengan sektor ekonomi lainnya.</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Menganalisis dampak investasi sektor agroindustri terhadap pembentukan output, pendapatan dan tenaga kerja.</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="input/j">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Data sekunder sumber Disperindagkop Kota Bogor.</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Data sekunder sumber Bappeda Kota Bogor</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Data sekunder BPPTPM Kota Bogor</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="input/k">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisis keterkaitan ke belakang (Backward Linkage) dan analisis keterkaitan ke depan (Forward Linkage)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisis Penentuan Sektor Kunci (Prioritas): Indeks Daya Penyebaran (power of dispersion); Indeks Derajat Kepekaan (degree of Sensitivity)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisis Multiplier: Multiplier Output, Multiplier Pendapatan, Multiplier Tenaga Kerja</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisis Dampak Investasi Sektor Agroindustri: Koefisien Pendapatan, Koefisien Tenaga Kerja</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Empat -->
+			<div class="column">
+				<h3><span style="color: #008000;">Studi Kasus 3: Analisa Input Output Perekonomian NTT</span></h3>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="input/l">Data Penelitian</a>
+			        <a class="item" data-tab="input/m">Metode Penelitian</a>
+			        <a class="item" data-tab="input/n">Tujuan Penelitian</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="input/l">
+			        <div class="ui list">
+			        	Analisa Input Output Perekonomian NTT
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="input/m">
+			        <div class="ui list">
+			        	Tabel Input Output provinsi NTT.
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="input/n">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Updating input output NTT</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Employment multiplier, analisa dampak output, Income Multiplier, Input Multiplier, Key Sectors Analysis Forward and Backward Linkage, Leontief Inverse, Output Multiplier</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Multiplier Product Matrix (MPM) Analysis</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- EVIEWS -->
+	<div class="ui tab" data-tab="eviews">
+		<div class="ui stackable two column grid">
+			<div class="column">
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="eviews/a">Model ARIMA (Autoregressive Integrated Moving Average)</a>
+			        <a class="item" data-tab="eviews/d">Model ARIMA 2</a>
+			        <a class="item" data-tab="eviews/b">Model Vector Autoregressive (VAR)</a>
+			        <a class="item" data-tab="eviews/c">Model ARCH/GARCH</a>
+			        <a class="item" data-tab="eviews/e">Model ECM (Error Correction Model)</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="eviews/a">
+			      	<div class="ui list">
+			      		<div class="item"><i class="users icon"></i><div class="content">Mengapa menggunakan time series</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Proses Stokastik (random)</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Autocovarian</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Stokastik stasioner</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Pure random/ white noise</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Proses stokastik non-stasioner</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Random walk tanpa drif</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Random Walk dengan drift</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Proses Unit root</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Random Walk with deterministic trend</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Fenomena Spurius Regression</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Lag dan Lead</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Cara Mengetahui stasioneritas</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">ACF dan Correlogram</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Autocorrelation Function(ACF)</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Q Statistic (Ljung &amp; Box)</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Dickey-Fuller Test</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Augmented Dickey Fuller</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Phillips-Perron (PP)</div></div>
+			      	</div>
+			      </div>
+			      <div class="ui tab" data-tab="eviews/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Analysis Vector Autoregressive (VAR)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Proses, Penentuan dan Identifikasi Model VAR dan VECM</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Stabilitas dan Stationeritas</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Bentuk Bentuk VAR</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Unrestricted VAR (VAR)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Restricted VAR (VECM)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Struktural VAR</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Tahapan pembentukan sistem persamaan VAR</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Uji stasioneritas data</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Penentuan lag optimal</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Pengujian hubungan kointegrasi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Uji stabilitas model VAR dan VEC</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Bentuk urutan variabel (ordering)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Impulse Response Function</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Kausalitas antar variabel: Pendekatan Granger</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="eviews/c">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Pertimbangan penggunaan ARCH/GARCH: mengapa dan kapan dipergunakan?</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Kelemahan ARCH Model</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengujian ARCH Effect</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Mengapa GARCH lebih baik daripada ARCH?</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model ARCH</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model GARCH</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Struktur Model ARCH / GARCH</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Conditional mean atau mean equation</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Conditional variance</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Unsur GARCH</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Unsur ARCH</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Modifikasi Model ARCH/GARCH</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Modifikasi pada Conditional mean</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Modifikasi pada Conditional Variance</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">GARCH in mean (GARCH-M)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">EGARCH (Exponential GARCH)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">TARCH (Treshold ARCH)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">GJR-GARCH</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Estimasi Model ARCH/GARCH</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="eviews/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Autocorrelation Coefficient (AC)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Partial Autocorrelation Coefficient (PAC)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Ljung-Box Q-statistics</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Moving Average (MA)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Autoregressive (AR)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Model ARMA (Autoregressive Moving Average)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Model ARIMA (Autoregressive Integrated Moving Average)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Prinsip ARIMA</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Tahapan dalam ARIMA</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Proses Unit Root</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Stationaritas (Unit Root) pada ARMA</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Box &amp; Jenkins</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan AIC (Akaike Information Criterion)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan SIC (Schawarz’s Information Criterion)</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="eviews/e">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Pertimbangan penggunaan ECM: mengapa dan kapan?</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Kointegrasi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Interpretasi Error Corection Model</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Trend Jangka Panjang</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Mekanisme Jangka Pendek</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Koreksi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Speed of Adjustment</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model ECM Engel-Granger</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model ECM ARDL (autoregressive distributed lag)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Greene (2005 :p734)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Nonlinear Least Square (NLS) dan Maximum Likelihood (ML)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model Ekonomi Error Corection Mechanism: Model Ekonomi Tunggal</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model Ekonomi Error Corection Mechanism: Model Ekonomi Koreksi Tunggal pada persamaan Tungal</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model Ekonomi Error Corection Mechanism: Model Ekonomi Multi Koreksi pada persamaan Tungal</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model Ekonomi Error Corection Mechanism: Model Ekonomi Persamaan Sistem dengan Multi Koreksi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model Ekonomi Error Corection Mechanism: Model Ekonomi Sistem Panel</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Model Ekonomi Error Corection Mechanism: Model Ekonomi Sistem Nonlinier (Simultan)</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Second -->
+			<div class="column">
+			  <!-- <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="eviews/f">Memasukan Data ke Stata</a>
+			        <a class="item" data-tab="eviews/g">Dasar Statistik Deskriptif di Stata</a>
+			        <a class="item" data-tab="eviews/h">Do-file Stata</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="eviews/f">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Input data ASCII seperti spreadsheet</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Input data ASCII Unformatted seperti text file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuka data file Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Input data menggunakan menu Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Save data yang telah dieviews</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Lihat data yang telah dieviews</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Edit data yang telah dieviews</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="eviews/g">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menampilkan statistik deskriptif dasar di Output Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menampilkan statistik deskriptif yang spesifik di Output Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menampilkan tabel di Output Stata</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Cara menampilkan tabulasi data dan cross tabulasi data secara one-way atau two-way di Output Stata</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="eviews/h">
+			        <div class="ui list">
+			          <div class="item"><i class="users icon"></i><div class="content">Apa itu do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Mengapa dan kapan harus menggunakan do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuat do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Me-running do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Tips do-file</div></div>
+			          <div class="item"><i class="users icon"></i><div class="content">Membuat note pada do-file</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div> -->
+			</div>
+		</div>
+	</div>
+
+	<!-- SNSE -->
+	<div class="ui tab" data-tab="snse">
+		<div class="ui stackable two column grid">
+			<div class="column">
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="active item" data-tab="snse/a">Pengenalan SNSE (Sistem Neraca Sosial Ekonomi) atau SAM (Social Accounting Matrix) dan SPA (Structural Path Analysis)</a>
+			        <a class="item" data-tab="snse/b">Matriks-matriks dalam SNSE</a>
+			        <a class="item" data-tab="snse/c">Model Pengganda Neraca</a>
+			        <a class="item" data-tab="snse/d">Dekomposisi Pengganda SNSE (Sistem Neraca Sosial Ekonomi)</a>
+			        <a class="item" data-tab="snse/e">Pengenalan SPA (Structural Path Analysis)</a>
+			        <a class="item" data-tab="snse/f">Updating dan Agregasi Spasial Tabel SNSE dan Matriks Transaksi</a>
+			        <a class="item" data-tab="snse/g">Matriks Pengganda/Multiplier (Ma)</a>
+			        <a class="item" data-tab="snse/h">Analisa Dekomposisi</a>
+			        <a class="item" data-tab="snse/i">Structural Path Analysis (SPA)</a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/a">
+			      	<div class="ui list">
+			      		<div class="item"><i class="users icon"></i><div class="content">Arus melingkar pendapatan dalam perekonomian</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Struktur SNSE (Sistem Neraca Sosial Ekonomi)</div></div>
+			      		<div class="item"><i class="users icon"></i><div class="content">Arus melingkar dalam perekonomian</div></div>
+			      	</div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Matriks T = Transaksi antar Blok</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Matriks X = Pendapatan Neraca Endogen dari Neraca Eksogen</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Matriks L = Pengeluaran Neraca Endogen untuk Neraca Eksogen</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Matriks Y = Pendapatan Total Neraca Endogen</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Matriks Y' = Pengeluaran Total Neraca Endogen</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Hubungan antar Blok dalam Matriks T</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Distribusi Pendapatan Neraca Endogen</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Distribusi Pengeluaran Neraca Endogen</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Pendekatan Rata-rata (Average)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pendekatan Marjinal (Marginal)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Angka pengganda</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Efek langsung dan tidak langsung</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Round-by-round effect</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Marginal Expenditure Propensity (Matriks C)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Hubungan Matriks C dan Matriks A</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Jenis Dekomposisi Pengganda</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengganda Transfer</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengganda Open Loop</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengganda Closed Loop</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/e">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Elementary Path vs Sirkuit</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengaruh atau influence dalam Structural Path Analysis</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Direct Influence atau pengaruh langsung</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengaruh Total</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Pengaruh Global</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/f">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Cara melakukan Updating Tabel SNSE</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Cara membuat Matriks Transaksi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Agregasi dari banyak sektor atau banyak regional ke sedikit sektor atau sedikit regional</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Agregasi dari sedikit sektor atau sedikit regional ke banyak sektor atau banyak regional</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/g">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">analisa Dampak Total/Dampak Langsung dari kebijakan pemerintah atau shock eksternal mempengaruhi sektor produksi, faktor produksi, dan institusi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Siapa saja yang mendapat dampak paling besar</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Seberapa besar dampak tersebut</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/h">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">analisa dampak spesifik dari kebijakan pemerintah atau shock eksternal mempengaruhi sektor produksi, faktor produksi, dan institusi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Siapa saja yang mendapat dampak paling besar</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Seberapa besar dampak tersebut</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Dampak /Shock interblock (M1)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Dampak /Shock open loop (M2)</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Dampak /Shock close loop (M3)</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/i">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">jalur pengaruh dari dampak shock eksternal atau kebijakan pemerintah mempengaruhi sektor produksi, faktor produksi, dan iinstitusi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Pengaruh langsung</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Pengaruh total</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">perhitungan Pengaruh global</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Second -->
+			<div class="column">
+				<div class="ui header">Studi Kasus: Dampak Penurunan Subsidi Listrik Terhadap Perekonomian</div>
+			  <div class="ui grid">
+			    <div class="six wide column">
+			      <div class="ui vertical fluid tabular menu">
+			        <a class="item active" data-tab="snse/b"></a>
+			        <a class="item" data-tab="snse/c"></a>
+			        <a class="item" data-tab="snse/d"></a>
+			      </div>
+			    </div>
+			    <div class="ten wide stretched column">
+			      <div class="ui tab active" data-tab="snse/b">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Dampak penurunan subsidi listrik terhadap perekonomian sebelum dan sesudah (Shock).</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Dampak penurunan subsidi listrik terhadap distribusi pendapatan rumah tangga dan perusahaan</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Dampak penurunan subsidi listrik terhadap sektor produksi</div></div>
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/c">
+			        <div class="ui list">
+			        	Tabel Sistem Neraca Sosial Ekonomi (SNSE).
+			        </div>
+			      </div>
+			      <div class="ui tab" data-tab="snse/d">
+			        <div class="ui list">
+			        	<div class="item"><i class="users icon"></i><div class="content">Updating matriks transaksi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Agregasi spasial matriks transaksi</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa Multiplier atau Pengganda (Ma) Dampak Langsung (Direct Impact) Penurunan Subsidi Listrik</div></div>
+			        	<div class="item"><i class="users icon"></i><div class="content">Analisa Dekomposisi: Dampak Intra Blok (M1), Dampak Open Loop (M2), Dampak Close Loop (M3)Analisa Structural Path Analysis: Pengaruh langsung, Pengaruh total, dan Pengaruh global</div></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="ui six item inverted menu">
+	<a class="item red active"><i class="mail icon"></i>support@pam.web.id</a>
+  <a class="item green active"><i class="whatsapp icon"></i>0898989898</a>
+  <a class="item yellow active">EViews</a>
+  <a class="item orange active">DEA</a>
+  <a class="item olive active" >Input Output</a>
+  <a class="item purple active">SNSE</a>
+</div>
+
+<!-- puji -->
+<div id="map"></div>
+    <script>
+    	function initMap() {
+    	  var chicago = new google.maps.LatLng(-6.208753, 106.810241);
+
+    	  var map = new google.maps.Map(document.getElementById('map'), {
+    	    center: chicago,
+    	    zoom: 17
+    	  });
+
+    	  var coordInfoWindow = new google.maps.InfoWindow();
+    	  coordInfoWindow.setContent(createInfoWindowContent(chicago, map.getZoom()));
+    	  coordInfoWindow.setPosition(chicago);
+    	  coordInfoWindow.open(map);
+
+    	  map.addListener('zoom_changed', function() {
+    	    coordInfoWindow.setContent(createInfoWindowContent(chicago, map.getZoom()));
+    	    coordInfoWindow.open(map);
+    	  });
+    	}
+
+    	var TILE_SIZE = 256;
+
+    	function createInfoWindowContent(latLng, zoom) {
+    	  return [
+    	    'CV Prima Adikara Mandiri',
+    	    'Jalan Danau Toba No 104, Jakarta Pusat'
+    	  ].join('<br>');
+    	}
+
+    	// The mapping between latitude, longitude and pixels is defined by the web
+    	// mercator projection.
+    	function project(latLng) {
+    	  var siny = Math.sin(latLng.lat() * Math.PI / 180);
+
+    	  // Truncating to 0.9999 effectively limits latitude to 89.189. This is
+    	  // about a third of a tile past the edge of the world tile.
+    	  siny = Math.min(Math.max(siny, -0.9999), 0.9999);
+
+    	  return new google.maps.Point(
+    	      TILE_SIZE * (0.5 + latLng.lng() / 360),
+    	      TILE_SIZE * (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI)));
+    	}
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRbdvGh7lQzWQLAAlWGFjJGjSs28z7zwk&callback=initMap"
+    async defer></script>
+</body>
+</html>
