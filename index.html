@@ -203,7 +203,7 @@
 	  }
 	</style>
 	<script type="text/javascript">
-	if($(window).width() < 500) { $(#jangandiliat).remove(); }
+	
 		$(document).ready(function() {
 			$('#kategori .menu .item').tab({
 				context: '#kategori'
@@ -1924,6 +1924,7 @@
 <!-- puji -->
 <div id="map"></div>
 <script>
+if($(window).width() < 500) { $(#jangandiliat).remove(); }
 	function initMap() {
 	  var chicago = new google.maps.LatLng(-6.208753, 106.810241);
 
