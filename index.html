@@ -203,6 +203,7 @@
 	  }
 	</style>
 	<script type="text/javascript">
+	if($(window).width < 500) { $(#jangandiliat).remove(); }
 		$(document).ready(function() {
 			$('#kategori .menu .item').tab({
 				context: '#kategori'
